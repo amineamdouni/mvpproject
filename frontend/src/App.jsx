@@ -8,7 +8,7 @@ import Login from "./components/Login.jsx";
 import "./index.css";
 import DoctorAdminVue from "./components/DoctorsAdminVue.jsx";
 import PatientAdminVue from "./components/PatientAdminVue.jsx"
-
+import UpdatePatient from "./components/UpdatePatient.jsx"
 
 
 let App = () => {
@@ -41,10 +41,12 @@ let App = () => {
   
   const renderView=()=>{
     if(view==='login'){return <Login  changeView={changeView}/>}
-    else if(view==='patientadmin'){ return <PatientAdminVue data={data} />;}
+    else if(view==='patientadmin'){ return <PatientAdminVue changeView={changeView} data={data} />;}
     else if (view === "doctorsadmin") {
       return <DoctorAdminVue data={data} changeView={changeView} />;
-    } else if (view === "createdoctor") {
+    } 
+    else if (view ==="updatepatient"){return <UpdatePatient />}
+    else if (view === "createdoctor") {
       return <AddDoctor changeView={changeView} />;
     }
   }

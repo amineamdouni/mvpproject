@@ -1,4 +1,6 @@
 import axios from "axios";
+import Popup from "reactjs-popup";
+
 import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 const PatientAdminVue = (props) => {
@@ -33,7 +35,7 @@ axios.delete(`http://localhost:4000/admin/onePat/${name}`);
                 >
                   <ul>
                     <li onClick={()=>{Discharge(e.patientname)}}>Discharge</li>
-                    <li>update patient state</li>
+                    <li onClick={()=>{props.changeView("updatepatient");}} >update patient state</li>
                   </ul>
                 </div>
               )}

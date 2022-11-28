@@ -26,7 +26,7 @@ let patients = mongoose.Schema({
   patientimage:{type:String},
   case: { type: String },
   gender: { type: String },
- state:{type:String,default:'testing'}  
+ state:{type:String}  
 });
 let admins = mongoose.Schema({
   adminName: {type:String},

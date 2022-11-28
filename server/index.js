@@ -100,6 +100,7 @@ app.post("/admin/pat", (req, res) => {
   });
 });
 app.put(`/admin/onePat/:patientname`, (req, res) => {
+  console.log(req.params.patientname);
   doctor.updateOne(
     { patientname: req.params.patientname },
     req.body,
