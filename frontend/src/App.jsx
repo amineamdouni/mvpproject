@@ -9,7 +9,10 @@ import "./index.css";
 import AdminVue from "./components/AdminVue.jsx";
 
 
+
+
 let App = () => {
+
   var [menu, setMenu] = useState(true);
   let [data, setData] = useState([]);
   const [view, setView] = useState("");
@@ -129,11 +132,13 @@ let App = () => {
                 </button>
               </div>
             </div>
+            
           </ul>
         </nav>
       </header>
       {/* Home page */}
       <div className="compain">
+        
         
         <AdminVue data={data} />
       </div>

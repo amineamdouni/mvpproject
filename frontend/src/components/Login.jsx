@@ -8,6 +8,7 @@ let Login = (props) => {
 
 const log= (input)=>{
     input=JSON.stringify(input)
+    
  axios
      .get(`http://localhost:4000/login/admin/${input}`)
      .then(async(res) => {
