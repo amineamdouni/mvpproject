@@ -2,8 +2,10 @@ import React from 'react'
 import axios from 'axios'
 const AdminVue = (props) => {
    
+  
   return (
     <div>
+      <button onClick={()=>props.changeView('createdoctor')}> click me</button>
       <ul className="doctors-list">
         {props.data.map((e, i) => (
           <div

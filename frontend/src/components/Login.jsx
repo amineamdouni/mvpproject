@@ -6,25 +6,26 @@ let Login = (props) => {
   const [password, setPassword] = useState("");
   const [data, setData] = useState("");
 
-const log= (input)=>{
-    input=JSON.stringify(input)
-    
- axios
-     .get(`http://localhost:4000/login/admin/${input}`)
-     .then(async(res) => {
-       
-       await setData(res.data);
-     });
-console.log(input,'input');
-console.log(data,'data');
-}
-const check =async()=>{
+  const log = (input) => {
+    input = JSON.stringify(input);
+
+    axios
+      .get(`http://localhost:4000/login/admin/${input}`)
+      .then(async (res) => {
+        await res.data;
+        setData(res.data);
+      });
+
+    console.log(input, "input");
+    console.log(data, "data");
+  };
+  const check = () => {
     if (data.length === 0) {
-      console.log("fuckoff");
+      return false;
     } else {
-      console.log("welcome");
+      return true;
     }
-}
+  };
   return (
     <div>
       <input
@@ -37,17 +38,21 @@ const check =async()=>{
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={async()=>{
-        await log({
-        name,
-        password 
-      })
-      await check()
-      await props.changeView('admin')
-      }}> login</button>
+      <button
+        onClick={() => {
+          log({
+            name,
+            password,
+          });
+          if (check() === true) {
+            props.changeView("doctorsadmin");
+          }
+        }}
+      >
+        login
+      </button>
     </div>
   );
 };
-
 
 export default Login;

@@ -30,7 +30,25 @@ body {
     margin-top: 150px;
     margin-left: 320px;
 }
-
+.patientdet{
+    position: relative;
+    right:100px;
+}
+.patientimg{
+    position: relative;
+    right: 10px;
+    height: 40% ;
+    width:30%;
+}
+.threeDots{position: relative;
+left: 180px;
+/* top:50px; */
+}
+.name-user{
+    position: relative;
+        left:50px;
+        top: 20px;
+}
 .container {
     width: 28vmin;
     height: 28vmin;
@@ -1586,9 +1604,9 @@ ul {
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
-.content-vote {
+/* .content-vote {
     display: flex;
-}
+} */
 
 .help {
     margin-left: 90px;
@@ -1660,7 +1678,7 @@ ul {
 
 
 .complaints-container {
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 

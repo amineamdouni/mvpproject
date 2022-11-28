@@ -6,16 +6,18 @@ import quotes from "./images/quotes1.png";
 import axios from "axios";
 import Login from "./components/Login.jsx";
 import "./index.css";
-import AdminVue from "./components/AdminVue.jsx";
-
+import DoctorAdminVue from "./components/DoctorsAdminVue.jsx";
+import PatientAdminVue from "./components/PatientAdminVue.jsx"
 
 
 
 let App = () => {
 
+
   var [menu, setMenu] = useState(true);
   let [data, setData] = useState([]);
-  const [view, setView] = useState("");
+  const [view, setView] = useState('login');
+  console.log(view)
   const toggleData = (input) => {
     if (input === "patients") {
       axios
@@ -32,6 +34,20 @@ let App = () => {
       setData(res.data);
     });
   }, []);
+  const changeView=(vi)=>{
+    setView(vi)
+    
+  }
+  
+  const renderView=()=>{
+    if(view==='login'){return <Login  changeView={changeView}/>}
+    else if(view==='patientadmin'){ return <PatientAdminVue data={data} />;}
+    else if (view === "doctorsadmin") {
+      return <DoctorAdminVue data={data} changeView={changeView} />;
+    } else if (view === "createdoctor") {
+      return <AddDoctor changeView={changeView} />;
+    }
+  }
   var toggleMenu = () => {
     if (menu === true) {
       return (
@@ -53,6 +69,7 @@ let App = () => {
               }}
             />
           </div>
+          
           <ul className="nav_list">
             <li className="nav_item">
               <div href="#" className="nav_link"></div>
@@ -106,7 +123,7 @@ let App = () => {
                 className="nav_link2"
                 onClick={async () => {
                   toggleData("patients");
-                  setView("patient");
+                  setView("patientadmin");
                 }}
               >
                 patients
@@ -117,7 +134,7 @@ let App = () => {
                 className="nav_link2"
                 onClick={async () => {
                   toggleData("doctors");
-                  setView("doctors");
+                  setView("doctorsadmin");
                 }}
               >
                 doctors{" "}
@@ -132,15 +149,15 @@ let App = () => {
                 </button>
               </div>
             </div>
-            
+             
           </ul>
         </nav>
       </header>
       {/* Home page */}
       <div className="compain">
+       
         
-        
-        <AdminVue data={data} />
+       {renderView()}
       </div>
       <footer></footer>
     </div>

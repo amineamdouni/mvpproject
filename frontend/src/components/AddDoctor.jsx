@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios"
 
 let AddDoctor = (props) => {
-  const [topic, setTopic] = useState("");
-  const [location, setLocation] = useState("");
-  const [content, setContent] = useState("");
-  const [email, setEmail] = useState("");
-  console.log(email);
+  const [score, setScore] = useState("");
+  const [speciality, setSpeciality] = useState("");
+  const [patientsList, setPatientsList] = useState("");
+  const [doctorname, setDoctorname] = useState("");
+ 
+  const addDoctor=(doc)=>{
+axios.post('http://localhost:4000/admin/doc',doc)
+  }
 
   return (
     <div className="complaints-container">
@@ -15,12 +19,12 @@ let AddDoctor = (props) => {
 
         <div className="form-control">
           <label for="email" id="label-email">
-            Email
+            doctor name
           </label>
           <input
             type="email"
             onChange={(e) => {
-              setEmail(e.target.value);
+              setDoctorname(e.target.value);
             }}
             id="email"
             placeholder="Enter your email"
@@ -29,88 +33,68 @@ let AddDoctor = (props) => {
 
         <div className="form-control">
           <label for="role" id="label-role">
-            choose your government:
+            choose speciality:
           </label>
 
           <select
             name="role"
             id="role"
             onChange={(e) => {
-              setLocation(e.target.value);
+              setSpeciality(e.target.value);
             }}
           >
             <option value="Tunis">Tunis</option>
             <option value="Ariana">Ariana</option>
             <option value="Ben arous">Ben arous</option>
-            <option value="Manouba">Manouba</option>
-            <option value="Kairouan">Kairouan</option>
-            <option value="Bizerte">Bizerte</option>
-            <option value="Sousse">Sousse</option>
-            <option value="Monastir">Monastir</option>
-            <option value="Mahdia">Mahdia</option>
-            <option value="Nabeul">Nabeul</option>
-            <option value="Kef">Kef</option>
-            <option value="Kasserine">Kasserine</option>
-            <option value="Béja">Béja</option>
-            <option value="Jendouba">Jendouba</option>
-            <option value="Médenine">Médenine</option>
-            <option value="Gabès">Gabès</option>
-            <option value="Gafsa">Gafsa</option>
-            <option value="Kébili">Kébili</option>
-            <option value="Sfax">Sfax</option>
-            <option value="Sidi Bouzid">Sidi Bouzid</option>
-            <option value="Siliana">Siliana</option>
-            <option value="Tozeur">Tozeur</option>
-            <option value="Tataouine">Tataouine</option>
-            <option value="Zaghouan">Zaghouan</option>
+            
           </select>
         </div>
         <div class="form-control">
           <label for="role" id="label-role">
-            choose your complain:
+            choose doctor score:
           </label>
 
           <select
             name="role"
             onChange={(e) => {
-              setTopic(e.target.value);
+              setScore(e.target.value);
             }}
             id="role"
           >
-            <option value="Domestic Violence">Domestic Violence </option>
-            <option value="Sexual Violence">Sexual Violence</option>
+            <option value="Domestic Violence">100 </option>
+            <option value="Sexual Violence">75</option>
             <option value="harassment and stalking">
-              harassment and stalking
+              50
             </option>
-            <option value="Racism/Sexism">Racism/Sexism</option>
+            <option value="Racism/Sexism">25</option>
 
-            <option value="Minor Abuse">Minor Abuse</option>
-            <option value="Anti-Establishment">Anti-Establishment</option>
+            <option value="Minor Abuse">0</option>
+           
           </select>
           <div class="form-control">
-            <label for="complain">your complaints</label>
+            <label for="complain">image</label>
 
             <textarea
               onChange={(e) => {
-                setContent(e.target.value);
+                setPatientsList(e.target.value);
               }}
               name="comment"
               id="comment"
               className="text-field"
-              placeholder="Enter your complaint here"
+              placeholder="Enter patients  here"
             ></textarea>
           </div>
 
           <button
             id="submit"
             onClick={() => {
-              props.addComplain({
-                email: email,
-                placement: location,
-                topic: topic,
-                content: content,
+              addDoctor({
+                doctorname,
+                speciality,
+                doctorimage:patientsList,
+                score,
               });
-              props.changeView("");
+              props.changeView('admin')
             }}
           >
             Submit

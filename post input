@@ -23,3 +23,13 @@
 
   score: { type: Number },
  }
+
+
+
+ {
+  "patientname":"walid",
+  doctorslist:['aziz'],
+  patientgenre:"female",
+  
+
+ },

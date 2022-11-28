@@ -22,10 +22,11 @@ let doctors = mongoose.Schema({
 });
 let patients = mongoose.Schema({
   patientname: { type: String, require: true },
-  doctorslist:{type:Array},
-  case: { type: Array, require: true },
-  patientGenre: { type: String, require: true },
- state:{type:String,default:'testing'}
+  doctorname:{type:String}, 
+  patientimage:{type:String},
+  case: { type: String },
+  gender: { type: String },
+ state:{type:String,default:'testing'}  
 });
 let admins = mongoose.Schema({
   adminName: {type:String},
