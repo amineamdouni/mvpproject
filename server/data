@@ -1,0 +1,168 @@
+governments=[
+  { 
+    placement:"Tunis",
+   population:1056247,
+    Women:528102,
+   Kids:218656
+
+    
+  },
+  {
+    placement:"Ariana",
+   population:576088,
+   Women:284153,
+   Kids:136713
+  },
+  {
+    placement:"Ben arous",
+    population:631842,
+    Women:315099,
+    Kids:147598
+
+  },
+  {
+    placement:"Manouba",
+    population:379518,
+    Women:187658,
+    Kids:86713
+  },
+  {
+    placement:"Kairouan",
+    population:570559,
+    Women:290250,
+    Kids:156335
+  },
+  {
+    placement:"Bizerte",
+    population:568219,
+    Women:281583,
+    Kids:134930
+  }
+  ,
+  {
+    placement:"Sousse",
+    population:674971,
+    Women:336016,
+    Kids:169239
+  }
+  ,
+  {
+    placement:"Monastir",
+    population:548828,
+    Women:274613,
+    Kids:145577
+  }
+  ,
+  {
+    placement:"Mahdia",
+    population:410812,
+    Women:211012,
+    Kids:112878
+  }
+  ,
+  {
+    placement:"Nabeul",
+    population:787920,
+    Women:389233,
+    Kids:191509
+  }
+  ,
+  {
+    placement:"Kef",
+    population:243156	,
+    Women:122546,
+    Kids:52591
+  }
+  ,
+  {
+    placement:"Kasserine",
+    population:439243	,
+    Women:221228,
+    Kids:121183
+  }
+  ,
+  {
+    placement:"Béja",
+    population:303032	,
+    Women:151650,
+    Kids:68112
+  }
+  ,
+  {
+    placement:"Jendouba",
+    population:401477	,
+    Women:205014,
+    Kids:89652
+  }
+  ,
+  {
+    placement:"Médenine",
+    population:479520	,
+    Women:245272,
+    Kids:121398
+  }
+  ,
+  {
+    placement:"Gabès",
+    population:374300	,
+    Women:190581,
+    Kids:91202
+  }
+  ,
+  {
+    placement:"Gafsa",
+    population:337331	,
+    Women:205014,
+    Kids:89652
+  }
+  ,
+  {
+    placement:"Kébili",
+    population:156961	,
+    Women:79620,
+    Kids:38697
+  }
+  ,
+  {
+    placement:"Sfax",
+    population:955421	,
+    Women:474721,
+    Kids:230732
+  }
+  ,
+  {
+    placement:"Sidi Bouzid",
+    population:429912	,
+    Women:215238,
+    Kids:109981
+  }
+  ,
+  {
+    placement:"Siliana",
+    population:223087	,
+    Women:113435,
+    Kids:55382
+  }
+  ,
+  {
+    placement:"Tozeur",
+    population:107912	,
+    Women:54857,
+    Kids:27756
+  }
+  ,
+  {
+    placement:"Tataouine",
+    population:149453	,
+    Women:78548,
+    Kids:37304
+  }
+  ,
+  {
+    placement:"Zaghouan",
+    population:176945	,
+    Women:88885,
+    Kids:44596
+  }
+
+];

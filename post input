@@ -1,0 +1,25 @@
+
+ let patients = {
+  patientname: { type: String, require: true },
+  case: { type: Array, require: true },
+  patientGenre: { type: String, require: true },
+ state:{type:String,default:'testing'}
+}
+ let admins ={
+  adminName: { type: String },
+
+  adminPassword: String,
+}
+ let users = {
+  username: { type: String },
+  userPassword: String,
+}
+ let doctors ={
+  doctorname:String ,
+
+  speciality: { type: String, require: true },
+
+  patient: { type: Array, require: false },
+
+  score: { type: Number },
+ }
