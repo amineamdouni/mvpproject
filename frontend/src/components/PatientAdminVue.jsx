@@ -8,9 +8,17 @@ const PatientAdminVue = (props) => {
   const Discharge=(name)=>{
 axios.delete(`http://localhost:4000/admin/onePat/${name}`);
   }
-  console.log(props.data);
+
   return (
     <div className="">
+      <button
+        className="adddoc"
+        onClick={() => props.changeView("createpatient")}
+      >
+        {" "}
+        register new Patient
+      </button>
+
       {props.data.map((e, i) => (
         <div className="posts patientdet">
           <div className="post-card">
@@ -34,8 +42,20 @@ axios.delete(`http://localhost:4000/admin/onePat/${name}`);
                   className="dots-block"
                 >
                   <ul>
-                    <li onClick={()=>{Discharge(e.patientname)}}>Discharge</li>
-                    <li onClick={()=>{props.changeView("updatepatient");}} >update patient state</li>
+                    <li
+                      onClick={() => {
+                        Discharge(e.patientname);
+                      }}
+                    >
+                      Discharge
+                    </li>
+                    <li
+                      onClick={() => {
+                        props.changeView("updatepatient");
+                      }}
+                    >
+                      update patient state
+                    </li>
                   </ul>
                 </div>
               )}
@@ -45,7 +65,7 @@ axios.delete(`http://localhost:4000/admin/onePat/${name}`);
                 Patient State: <br />
                 {e.state}
               </div>
-              
+
               <div className="post-content">
                 Patient doctorname: <br />
                 {e.doctorname}

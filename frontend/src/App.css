@@ -34,15 +34,30 @@ body {
     position: relative;
     right:100px;
 }
+.btndel{
+    position: relative;
+    left: 100px;
+    top: -10px;
+}
 .patientimg{
     position: relative;
     right: 10px;
     height: 40% ;
     width:30%;
 }
+.doctorsimg{position: relative;
+    top: 50px;
+    height:150px;
+    ;}
 .threeDots{position: relative;
 left: 180px;
 /* top:50px; */
+}
+.adddoc{
+    position: relative;
+    left:1220px;
+    width: 200px;
+    height: 75px;
 }
 .name-user{
     position: relative;

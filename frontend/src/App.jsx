@@ -10,14 +10,15 @@ import DoctorAdminVue from "./components/DoctorsAdminVue.jsx";
 import PatientAdminVue from "./components/PatientAdminVue.jsx"
 import UpdatePatient from "./components/UpdatePatient.jsx"
 
-
+import DocDetailsAdmin from "./components/DocDetailsAdmin.jsx"
+import AddPatient from "./components/AddPatient.jsx";
 let App = () => {
 
-
+const [search,setSearch]=useState('')
   var [menu, setMenu] = useState(true);
   let [data, setData] = useState([]);
   const [view, setView] = useState('login');
-  console.log(view)
+
   const toggleData = (input) => {
     if (input === "patients") {
       axios
@@ -29,6 +30,7 @@ let App = () => {
       });
     }
   };
+  console.log(data)
   useEffect(() => {
     axios.get("http://localhost:4000/admin/alldoc").then((res) => {
       setData(res.data);
@@ -38,17 +40,21 @@ let App = () => {
     setView(vi)
     
   }
-  
+  const changeData = (vi) => {
+    setData(vi);
+  };
   const renderView=()=>{
     if(view==='login'){return <Login  changeView={changeView}/>}
     else if(view==='patientadmin'){ return <PatientAdminVue changeView={changeView} data={data} />;}
-    else if (view === "doctorsadmin") {
-      return <DoctorAdminVue data={data} changeView={changeView} />;
+    else if (view === "doctorsadmin")  {
+      return <DoctorAdminVue data={data} changeView={changeView} changeData={changeData} />;
     } 
+    else if (view === 'createpatient'){return <AddPatient changeView={changeView} />;}
     else if (view ==="updatepatient"){return <UpdatePatient />}
     else if (view === "createdoctor") {
       return <AddDoctor changeView={changeView} />;
     }
+    else if (view ==='updatedoc'){return <DocDetailsAdmin data={data}/>}
   }
   var toggleMenu = () => {
     if (menu === true) {
@@ -135,7 +141,7 @@ let App = () => {
               <div
                 className="nav_link2"
                 onClick={async () => {
-                  toggleData("doctors");
+                 await toggleData("doctors");
                   setView("doctorsadmin");
                 }}
               >

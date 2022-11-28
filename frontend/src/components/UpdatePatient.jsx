@@ -36,14 +36,17 @@ const UpdatePatient = (props) => {
               waiting for lab result{" "}
             </option>
 
-            <option value="going to surgery">going to surgery</option>
-            <option value="rehabilitating">rehabilitating</option>
-            <option value="to Discharge">to Discharge</option>
+            <option value="urgent">urgent</option>
+            <option value="primary case">primary case</option>
+            <option value="long term care">long term care</option>
+            <option value="special case">special case</option>
+            <option value="Emergency physicians">Emergency physicians</option>
+            <option value="mental health care">mental health care</option>
+            <option value="hospice care">hospice care</option>
           </select>
         </div>
         <div class="form-control">
-          <button onClick={()=>update(patientname,state)
-        }>Submit</button>
+          <button onClick={() => update(patientname, state)}>Submit</button>
         </div>
       </div>
     </div>

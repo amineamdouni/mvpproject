@@ -43,10 +43,14 @@ axios.post('http://localhost:4000/admin/doc',doc)
               setSpeciality(e.target.value);
             }}
           >
-            <option value="Tunis">Tunis</option>
-            <option value="Ariana">Ariana</option>
-            <option value="Ben arous">Ben arous</option>
-            
+            <option value="family Doctor">family Doctor</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="pediatrician">pediatrician</option>
+            <option value="Internists">Internists</option>
+            <option value="Emergency physicians">Emergency physicians</option>
+            <option value="Psychiatrists">Psychiatrists</option>
+            <option value="Obstetricians and gynecologists">Obstetricians and gynecologists</option>
+            <option value="Radiologists">Radiologists</option>
           </select>
         </div>
         <div class="form-control">
@@ -61,15 +65,12 @@ axios.post('http://localhost:4000/admin/doc',doc)
             }}
             id="role"
           >
-            <option value="Domestic Violence">100 </option>
-            <option value="Sexual Violence">75</option>
-            <option value="harassment and stalking">
-              50
-            </option>
+            <option>100 </option>
+            <option>75</option>
+            <option>50</option>
             <option value="Racism/Sexism">25</option>
 
             <option value="Minor Abuse">0</option>
-           
           </select>
           <div class="form-control">
             <label for="complain">image</label>
@@ -91,10 +92,10 @@ axios.post('http://localhost:4000/admin/doc',doc)
               addDoctor({
                 doctorname,
                 speciality,
-                doctorimage:patientsList,
+                doctorimage: patientsList,
                 score,
               });
-              props.changeView('admin')
+              props.changeView("admin");
             }}
           >
             Submit

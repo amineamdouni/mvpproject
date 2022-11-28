@@ -58,7 +58,7 @@ app.delete("/admin/oneDoc/:doctorname", (req, res) => {
   });
 });
 app.put(`/admin/oneDoc/:doctorname`, (req, res) => {
-  doctor.updateOne(
+  doctor.findOneAndUpdate(
     { doctorname: req.params.doctorname },
     req.body,
     (err, result) => {
@@ -101,7 +101,7 @@ app.post("/admin/pat", (req, res) => {
 });
 app.put(`/admin/onePat/:patientname`, (req, res) => {
   console.log(req.params.patientname);
-  doctor.updateOne(
+  patient.findOneAndUpdate(
     { patientname: req.params.patientname },
     req.body,
     (err, result) => {

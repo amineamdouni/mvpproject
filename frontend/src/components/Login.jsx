@@ -16,8 +16,6 @@ let Login = (props) => {
         setData(res.data);
       });
 
-    console.log(input, "input");
-    console.log(data, "data");
   };
   const check = () => {
     if (data.length === 0) {
