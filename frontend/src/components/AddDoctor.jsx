@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-let CreatComplain = (props) => {
+let AddDoctor = (props) => {
   const [topic, setTopic] = useState("");
   const [location, setLocation] = useState("");
   const [content, setContent] = useState("");
@@ -11,7 +11,7 @@ let CreatComplain = (props) => {
   return (
     <div className="complaints-container">
       <div id="complain" className="form">
-        <div className="header">CreatComplain</div>
+        <div className="header">AddDoctor</div>
 
         <div className="form-control">
           <label for="email" id="label-email">
@@ -120,4 +120,4 @@ let CreatComplain = (props) => {
     </div>
   );
 };
-export default CreatComplain;
+export default AddDoctor;
