@@ -19,7 +19,7 @@ const AdminVue = (props) => {
             className="doctors-list-item"
             >
             <button  className='btndel' onClick={()=>{
-                axios.delete(`http://localhost:4000/admin/${e.doctorname}`);
+                axios.delete(`http://localhost:4000/admin/oneDoc/${e.doctorname}`);
             }}> fire</button>
             <p>doctor name: <br />{e.doctorname}</p>
 

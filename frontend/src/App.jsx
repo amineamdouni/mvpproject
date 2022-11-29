@@ -17,7 +17,7 @@ let App = () => {
 const [search,setSearch]=useState('')
   var [menu, setMenu] = useState(true);
   let [data, setData] = useState([]);
-  const [view, setView] = useState('login');
+  const [view, setView] = useState('doctorsadmin');
 
   const toggleData = (input) => {
     if (input === "patients") {
@@ -44,8 +44,7 @@ const [search,setSearch]=useState('')
     setData(vi);
   };
   const renderView=()=>{
-    if(view==='login'){return <Login  changeView={changeView}/>}
-    else if(view==='patientadmin'){ return <PatientAdminVue changeView={changeView} data={data} />;}
+   if(view==='patientadmin'){ return <PatientAdminVue changeView={changeView} data={data} />;}
     else if (view === "doctorsadmin")  {
       return <DoctorAdminVue data={data} changeView={changeView} changeData={changeData} />;
     } 
